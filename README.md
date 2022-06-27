@@ -1,4 +1,4 @@
-# BMI Classifier
+# BMI Calculator
 
 To build, test, and run use the command:
 

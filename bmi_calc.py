@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 
-class BmiClassifier:
-    '''Class object of data specific BMI classifier
+class BmiCalculator:
+    '''Class object of data specific BMI calculator
 
     methods:
         get_bmi(self)
@@ -134,6 +134,6 @@ class BmiClassifier:
 
 
 if __name__ == '__main__':
-    bmi_object = BmiClassifier('bmi_data.json')
+    bmi_object = BmiCalculator('bmi_data.json')
     overweight_frequency = bmi_object.get_category_frequency(['Overweight', 'Moderately obese'])
-    print(f"Number of of people classified as overweight are: {overweight_frequency}")
+    print(f"Number of of people calculated as overweight are: {overweight_frequency}")

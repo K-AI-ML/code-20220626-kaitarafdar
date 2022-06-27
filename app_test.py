@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 import os
-from bmi_calc import BmiClassifier
+from bmi_calc import BmiCalculator
 
 
 class TestBmiCalc(unittest.TestCase):
@@ -11,7 +11,7 @@ class TestBmiCalc(unittest.TestCase):
 
         self.bmi_data = 'bmi_data.json'
         self.df = pd.read_json(self.bmi_data)
-        self.bmi_classifier = BmiClassifier(self.bmi_data)
+        self.bmi_classifier = BmiCalculator(self.bmi_data)
         self.bmi_catergories = [
             'Overweight',
             'Moderately obese',
@@ -61,6 +61,7 @@ class TestBmiCalc(unittest.TestCase):
 
 if __name__ == '__main__':
     import timeit
-    timing = timeit.timeit("BmiClassifier('bmi_data.json')", setup="from __main__ import BmiClassifier", number=100)
+    print('Estimating app run time...')
+    timing = timeit.timeit("BmiCalculator('bmi_data.json')", setup="from __main__ import BmiCalculator", number=100)
     print(f'App has taken {timing} seconds to run')
     unittest.main()
